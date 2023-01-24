@@ -19,6 +19,7 @@ requirements:
     - pip
     - python
   run:
+    - cryptography <=38.04
     - cloudpickle >=1.6.0
     - globus-sdk >=3.3.0
     - lazy-object-proxy >=1.6.0
