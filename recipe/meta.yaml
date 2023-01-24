@@ -1,5 +1,5 @@
 {% set name = "proxystore" %}
-{% set version = "0.3.3" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/proxystore-{{ version }}.tar.gz
-  sha256: e171c55ae9da68e6efcac7411b1443c2f7754ae1b7553a38ac4af45f4f8a8696
+  sha256: 03b0e1a2a2a78ec4ea61b4bd7e7da661f4ed267fd52de6c8a33a62e7411b319a
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 0
   skip: true  # [win]
 
 requirements:
@@ -19,6 +19,7 @@ requirements:
     - pip
     - python
   run:
+    - cryptography <=38.04
     - cloudpickle >=1.6.0
     - globus-sdk >=3.3.0
     - lazy-object-proxy >=1.6.0
