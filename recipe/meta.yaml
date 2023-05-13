@@ -26,6 +26,7 @@ requirements:
     - parsl >=1.0.0
     - python
     - redis-py >=3.4
+    - click
 
 test:
   imports:
