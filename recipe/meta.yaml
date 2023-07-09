@@ -1,5 +1,5 @@
 {% set name = "proxystore" %}
-{% set version = "0.5.1" %}
+{% set version = "0.5.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/proxystore-{{ version }}.tar.gz
-  sha256: 82c2793bf72f4855faab2e27906c792641dfbcaf00b397843d997f0dc81642e8
+  sha256: 83a542d1c0785d27b7b57657c5e09753eed8ba08f71d67504f571919389ebbb4
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -26,7 +26,7 @@ requirements:
     - parsl >=1.0.0
     - python
     - redis-py >=3.4
-    - click
+    - click !=8.1.4
 
 test:
   imports:
