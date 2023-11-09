@@ -38,7 +38,6 @@ test:
     - proxystore
   commands:
     - pip check
-    - proxystore-endpoint --help
     - proxystore-globus-auth --help
     - proxystore-relay --help
   requires:
