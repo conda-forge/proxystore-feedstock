@@ -42,6 +42,7 @@ test:
     - proxystore-relay --help
   requires:
     - pip
+    - websockets
 
 about:
   home: https://github.com/gpauloski/ProxyStore
