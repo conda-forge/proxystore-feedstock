@@ -10,35 +10,41 @@ source:
   sha256: e3bae02cf1f9a8129243c9ebcec1e7fc09f1486acf59643fd2246aec10987296
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
-  skip: true  # [win]
+  entry_points:
+    - proxystore-endpoint = proxystore.endpoint.cli:cli
+    - proxystore-globus-auth = proxystore.globus.cli:cli
+    - proxystore-relay = proxystore.p2p.relay.run:cli
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
+    - python >=3.8
+    - setuptools >=64.0
+    - setuptools-scm
     - pip
-    - python
   run:
-    - cryptography >=39.0.1
+    - python >=3.8
+    - click !=8.1.4
     - cloudpickle >=1.6.0
+    - cryptography >=39.0.1
     - globus-sdk >=3.3.0
     - lazy-object-proxy >=1.6.0
-    - parsl >=1.0.0
-    - python
-    - redis-py >=3.4
-    - click !=8.1.4
+    - typing-extensions >=4.3.0
 
 test:
   imports:
     - proxystore
   commands:
     - pip check
+    - proxystore-globus-auth --help
   requires:
     - pip
 
 about:
   home: https://github.com/gpauloski/ProxyStore
-  summary: Python lazy object proxy interface for distributed stores.
+  summary: Lazy object proxy interface for distributed stores.
   license: MIT
   license_file: LICENSE
 
