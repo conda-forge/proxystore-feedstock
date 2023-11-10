@@ -39,8 +39,11 @@ test:
   commands:
     - pip check
     - proxystore-globus-auth --help
+    - proxystore-relay --help
   requires:
     - pip
+    - websockets
+    - tosholi
 
 about:
   home: https://github.com/gpauloski/ProxyStore
