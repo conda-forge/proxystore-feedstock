@@ -32,7 +32,6 @@ requirements:
     - globus-sdk >=3.3.0
     - lazy-object-proxy >=1.6.0
     - typing-extensions >=4.3.0
-    - pydantic
 
 test:
   imports:
@@ -45,6 +44,7 @@ test:
     - pip
     - websockets
     - tosholi
+    - pydantic
 
 about:
   home: https://github.com/gpauloski/ProxyStore
