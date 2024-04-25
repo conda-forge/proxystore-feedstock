@@ -1,5 +1,5 @@
 {% set name = "proxystore" %}
-{% set version = "0.6.4" %}
+{% set version = "0.6.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/proxystore-{{ version }}.tar.gz
-  sha256: 59b9b2f9e1356c42deb0ee2effd03fa4e5f70a1775656ed12e7af8fca64f422a
+  sha256: c34329f8902776a0c977d57ed84e2adb05f89bcb3b9d8cab58701afe39e13037
 
 build:
   entry_points:
