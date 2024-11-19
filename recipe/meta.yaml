@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/proxystore-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/proxystore-{{ version }}.tar.gz
   sha256: a985644df332c865009982a03399cd1745c5f4c0533d7434a8f40fefdd008c95
 
 build:
