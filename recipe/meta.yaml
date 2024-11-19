@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/proxystore-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/proxystore-{{ version }}.tar.gz
   sha256: a985644df332c865009982a03399cd1745c5f4c0533d7434a8f40fefdd008c95
 
 build:
@@ -16,23 +16,25 @@ build:
     - proxystore-relay = proxystore.p2p.relay.run:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=64.0
     - setuptools-scm
     - pip
   run:
-    - pydantic >=2
-    - tomli-w
-    - python >=3.8
+    - python >={{ python_min }}
     - click !=8.1.4
     - cloudpickle >=1.6.0
     - cryptography >=39.0.1
     - globus-sdk >=3.3.0
     - lazy-object-proxy >=1.6.0
+    - pydantic >=2
+    # for all python, not just py<3.11, to stay noarch: python
+    - tomli
+    - tomli-w
     - typing-extensions >=4.3.0
 
 test:
@@ -43,6 +45,7 @@ test:
     - proxystore-globus-auth --help
     - proxystore-relay --help
   requires:
+    - python {{ python_min }}
     - pip
     - websockets
     - tosholi
@@ -58,3 +61,4 @@ extra:
   recipe-maintainers:
     - WardLT
     - jan-janssen
+    - xylar
