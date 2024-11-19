@@ -145,4 +145,5 @@ Feedstock Maintainers
 
 * [@WardLT](https://github.com/WardLT/)
 * [@jan-janssen](https://github.com/jan-janssen/)
+* [@xylar](https://github.com/xylar/)
 
