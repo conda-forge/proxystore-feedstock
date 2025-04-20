@@ -1,5 +1,5 @@
 {% set name = "proxystore" %}
-{% set version = "0.8.0" %}
+{% set version = "0.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/proxystore-{{ version }}.tar.gz
-  sha256: 546fa6e8c7a1f47099c37d0adf4805f548a186a0339fc9b7ccca1a756ad6d324
+  sha256: d30b228963aa589508371a41d8899c4511db1dc93487912c060529f3b96e4907
 
 build:
   entry_points:
@@ -16,7 +16,7 @@ build:
     - proxystore-relay = proxystore.p2p.relay.run:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
