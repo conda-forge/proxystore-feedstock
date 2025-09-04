@@ -1,5 +1,5 @@
 {% set name = "proxystore" %}
-{% set version = "0.8.2" %}
+{% set version = "0.8.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/proxystore-{{ version }}.tar.gz
-  sha256: 8d6065351d26ee28bb55a6a54c801691d9ad76a9dbbcf6d430e1ba1764bd0eb7
+  sha256: 7a71de1abaefd04425f9614a32a6527de48f2c65bba999996c7c1db582ec7b48
 
 build:
   entry_points:
@@ -30,7 +30,6 @@ requirements:
     - cloudpickle >=3
     - cryptography >=39.0.1
     - globus-sdk >=3.46.0,<4
-    - lazy-object-proxy >=1.6.0
     - pydantic >=2,<3
     # for all python, not just py<3.11, to stay noarch: python
     - tomli
