@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: proxystore
-  version: "0.8.3"
+  version: "1.0.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/proxystore-${{ version }}.tar.gz
-  sha256: 7a71de1abaefd04425f9614a32a6527de48f2c65bba999996c7c1db582ec7b48
+  sha256: 1d6b6edd5fdc31ac6fa096b09025b8adb1c8e25e16d2a4380b588501cdee5bac
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
@@ -25,7 +25,7 @@ build:
 requirements:
   host:
     - python ${{ python_min }}.*
-    - setuptools >=64.0
+    - setuptools >=77.0
     - setuptools-scm
     - pip
   run:
@@ -33,7 +33,7 @@ requirements:
     - click !=8.1.4
     - cloudpickle >=3
     - cryptography >=39.0.1
-    - globus-sdk >=3.46.0,<4
+    - globus-sdk >=4,<5
     - pydantic >=2,<3
     # for all python, not just py<3.11, to stay noarch: python
     - tomli
