@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: proxystore
-  version: "1.0.0"
+  version: "1.1.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/proxystore-${{ version }}.tar.gz
-  sha256: 1d6b6edd5fdc31ac6fa096b09025b8adb1c8e25e16d2a4380b588501cdee5bac
+  sha256: b799a535b8a939b3ebab3eed19d529f8a411ded1c9b87f3d1df0be864856c1e2
 
 build:
   number: 0
